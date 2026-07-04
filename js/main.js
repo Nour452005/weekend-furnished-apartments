@@ -213,8 +213,8 @@ const units = [
     {
         id: 'deluxe-double-twin',
         type: 'DOUBLE',
-        name: 'Deluxe Double Room – Twin Beds',
-        name_ar: 'غرفة ديلوكس مزدوجة – سريرين منفصلين',
+        name: 'Deluxe Room – Twin Beds',
+        name_ar: 'غرفة ديلوكس  – سريرين منفصلين',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'غرفة ديلوكس مفروشة بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
         price: 50,
