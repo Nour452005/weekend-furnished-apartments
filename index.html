@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weekend Furnished Apartments — Hamra, Beirut</title>
+    <meta name="description" content="Fully furnished apartments in the heart of Hamra, Beirut. Perfect for students, families, and business travelers.">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+    <a href="#home" class="nav-brand">Weekend <span>Apartments</span></a>
+    <div class="nav-links">
+        <a href="#units">Apartments</a>
+        <a href="#amenities">Amenities</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/96103755409?text=Hi%2C%20I%20would%20like%20to%20book%20a%20furnished%20apartment."
+           class="btn-nav" target="_blank">📞 Book Now</a>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()" id="hamburger">
+        <span></span><span></span><span></span>
+    </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+    <a href="#units" onclick="toggleMenu()">Apartments</a>
+    <a href="#amenities" onclick="toggleMenu()">Amenities</a>
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    <a href="https://wa.me/96103755409?text=Hi%2C%20I%20would%20like%20to%20book%20a%20furnished%20apartment."
+       target="_blank" style="color:#25D366">📞 Book on WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="hero-eyebrow">Hamra, Beirut · Fully Furnished</span>
+        <h1>Feel at Home<br>in the Heart of Beirut</h1>
+        <p>48 fully furnished suites walking steps away from AUBMC, Hamra Street,<br>
+           and the Mediterranean. Your home away from home.</p>
+    </div>
+
+    <div class="hero-renovation">
+        <div class="renovation-badge">
+            <div class="icon">✨</div>
+            <div>
+                <h3>Recently Renovated</h3>
+                <p>Every unit refreshed with modern finishes — top to bottom.</p>
+            </div>
+        </div>
+        <div class="renovation-tags">
+            <span class="renovation-tag">🎨 Fresh Paint & Flooring</span>
+            <span class="renovation-tag">🛋️ New Furnishings</span>
+            <span class="renovation-tag">🍳 Modern Kitchens</span>
+        </div>
+    </div>
+</section>
+
+<!-- STATS -->
+<section class="section section-grey">
+    <div class="container">
+        <div class="stats-row">
+            <div class="stat-box">
+                <div class="num" data-target="40">0</div>
+                <div class="lbl">Furnished Suites</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" data-target="20">0</div>
+                <div class="lbl">Years in Hamra</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" data-target="24">0</div>
+                <div class="lbl">Hour Electricity</div>
+            </div>
+            <div class="stat-box">
+                <div class="num" data-target="1000">0</div>
+                <div class="lbl">Happy Guests</div>
+            </div>
+        </div>
+
+        <!-- WHO IT'S FOR -->
+        <div class="section-header">
+            <div class="section-label">Who We Welcome</div>
+            <h2 class="section-title">A Home for Everyone</h2>
+            <p class="section-sub">Whether you're a student, a family, or a business traveler — our apartments are designed for your lifestyle.</p>
+        </div>
+        <div class="audience-carousel">
+            <div class="audience-grid" id="audience-grid">
+            <div class="audience-card">
+                <div class="audience-icon">🎓</div>
+                <h3>University Students</h3>
+                <p>Steps from AUB and AUBMC. Fast WiFi, quiet environment, and all the comforts of home.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">👨‍👩‍👧</div>
+                <h3>Families</h3>
+                <p>Spacious suites with full kitchenettes. Cook your own meals and enjoy Beirut at your pace.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">💼</div>
+                <h3>Business Travelers</h3>
+                <p>Prime Hamra location, stable electricity, and a comfortable workspace in every unit.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">🏥</div>
+                <h3>AUB Patients</h3>
+                <p>Close to AUBMC for treatment stays and follow-ups. A calm, comfortable base near the hospital.</p>
+            </div>
+            <div class="audience-card">
+                <div class="audience-icon">🌍</div>
+                <h3>Long-Stay Guests</h3>
+                <p>Weekly and monthly rates available. Settle in and experience Beirut like a local.</p>
+            </div>
+            </div>
+            <button class="carousel-arrow prev" onclick="shiftAudience(-1)" aria-label="Previous">&#10094;</button>
+            <button class="carousel-arrow next" onclick="shiftAudience(1)" aria-label="Next">&#10095;</button>
+        </div>
+    </div>
+</section>
+
+<!-- UNITS -->
+<section class="section" id="units">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Our Apartments</div>
+            <h2 class="section-title">Find Your Perfect Unit</h2>
+            <p class="section-sub">Every apartment is fully furnished and equipped — just bring your suitcase.</p>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters-row">
+            <div class="filter-group">
+                <label>Type</label>
+                <select id="filter-type" onchange="applyFilters()">
+                    <option value="">All types</option>
+                    <option value="DOUBLE">Deluxe Double Room</option>
+                    <option value="TRIPLE">Deluxe Triple Room</option>
+                    <option value="FAMILY">Deluxe Family Suite</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Guests</label>
+                <select id="filter-guests" onchange="applyFilters()">
+                    <option value="">Any</option>
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                    <option value="4">4+ guests</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Price range / night</label>
+                <div style="display:flex;align-items:center;gap:8px">
+                    <span id="price-min-val" style="font-size:0.85rem;color:var(--blue);font-weight:600;white-space:nowrap">$50</span>
+                    <div style="position:relative;flex:1;height:20px;display:flex;align-items:center">
+                        <div style="position:absolute;width:100%;height:3px;background:var(--grey-mid);border-radius:2px"></div>
+                        <div id="price-range-fill" style="position:absolute;height:3px;background:var(--blue);border-radius:2px;left:0%;width:100%"></div>
+                        <input type="range" id="price-min" min="50" max="300" value="50" step="10"
+                               oninput="updatePriceSlider()"
+                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none">
+                        <input type="range" id="price-max" min="50" max="300" value="300" step="10"
+                               oninput="updatePriceSlider()"
+                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none">
+                    </div>
+                    <span id="price-max-val" style="font-size:0.85rem;color:var(--blue);font-weight:600;white-space:nowrap">$100</span>
+                </div>
+            </div>
+            <button class="btn btn-outline" onclick="clearFilters()" style="white-space:nowrap">Clear</button>
+        </div>
+
+        <div class="units-grid" id="units-grid"></div>
+    </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="section section-grey" id="amenities">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">What's Included</div>
+            <h2 class="section-title">Everything You Need</h2>
+            <p class="section-sub">Every apartment comes fully equipped — no hidden extras, no surprises.</p>
+        </div>
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <div class="amenity-icon">⚡</div>
+                <div class="amenity-text">
+                    <h4>24/7 Electricity</h4>
+                    <p>Uninterrupted power around the clock</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">📶</div>
+                <div class="amenity-text">
+                    <h4>High-Speed WiFi</h4>
+                    <p>Fast and reliable internet in every unit</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🍳</div>
+                <div class="amenity-text">
+                    <h4>Full Kitchenette</h4>
+                    <p>Fridge, electric stove, and kitchenware</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🅿️</div>
+                <div class="amenity-text">
+                    <h4>Free Parking</h4>
+                    <p>On-site private parking for guests</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">📺</div>
+                <div class="amenity-text">
+                    <h4>Smart TV</h4>
+                    <p>Stay entertained with your favorite streaming platforms</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">❄️</div>
+                <div class="amenity-text">
+                    <h4>Air Conditioning</h4>
+                    <p>Climate control in every room</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🛗</div>
+                <div class="amenity-text">
+                    <h4>Elevator</h4>
+                    <p>Easy access to all floors</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🔒</div>
+                <div class="amenity-text">
+                    <h4>24/7 Security</h4>
+                    <p>Safe and secure building at all times</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🧹</div>
+                <div class="amenity-text">
+                    <h4>Housekeeping</h4>
+                    <p>Regular cleaning and fresh linen</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🏖️</div>
+                <div class="amenity-text">
+                    <h4>Near the Sea</h4>
+                    <p>1.2 km from AUB Beach Resort</p>
+                </div>
+            </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🎓</div>
+                <div class="amenity-text">
+                    <h4>Near AUB & AUBMC</h4>
+                    <p>Walking distance from major universities</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="services">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Optional Add-ons</div>
+            <h2 class="section-title">Laundry & Ironing Services</h2>
+            <p class="section-sub">Available on request, priced per item.</p>
+        </div>
+        <div class="amenities-grid" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+            <div class="service-card">
+                <div class="service-title"><span class="icon">🧺</span> Laundry (per item)</div>
+                <div class="price-row">
+                    <span class="item-name">Standard item</span>
+                    <span class="item-price">200,000 L.L.</span>
+                </div>
+                <div class="price-row">
+                    <span class="item-name">Abaya / Dishdasha</span>
+                    <span class="item-price">300,000 L.L.</span>
+                </div>
+                <div class="price-row">
+                    <span class="item-name">Undergarments</span>
+                    <span class="item-price">100,000 L.L.</span>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-title"><span class="icon">👔</span> Ironing (per item)</div>
+                <div class="price-row">
+                    <span class="item-name">Standard item</span>
+                    <span class="item-price">200,000 L.L.</span>
+                </div>
+                <div class="price-row">
+                    <span class="item-name">Abaya / Dishdasha</span>
+                    <span class="item-price">300,000 L.L.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-label">Get In Touch</div>
+            <h2 class="section-title">Contact Us</h2>
+            <p class="section-sub">Ready to book or have questions? Reach out — we respond fast on WhatsApp.</p>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>Reach Out</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div>
+                        <h4>Address</h4>
+                        <a href="https://www.google.com/maps/search/Weekend+Furnished+Apartments+Hamra+Beirut"
+                           target="_blank">
+                            Hamra Street area<br>
+                            Beirut, Lebanon<br>
+                            <span style="color:var(--blue);font-size:0.85rem">↗ Open in Google Maps</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <div>
+                        <h4>WhatsApp & Phone</h4>
+                        <a href="https://wa.me/96103755409" target="_blank">+961 03755409</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉️</div>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:info@weekendfurnishedapartments.com">info@weekendfurnishedapartments.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕐</div>
+                    <div>
+                        <h4>Check-in / Check-out</h4>
+                        <p>Check-in from 14:00<br>Check-out by 12:00</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/96103755409?text=Hi%2C%20I%20would%20like%20to%20book%20a%20furnished%20apartment."
+                   class="btn btn-whatsapp" target="_blank" style="margin-top:1rem">
+                    💬 Message Us on WhatsApp
+                </a>
+            </div>
+
+            <iframe
+                class="contact-map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.5!2d35.4833!3d33.8938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f17215880a78f%3A0x729182bae99836b4!2sHamra%2C%20Beirut%2C%20Lebanon!5e0!3m2!1sen!2slb!4v1625000000000!5m2!1sen!2slb"
+                allowfullscreen=""
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- SOCIAL -->
+<div class="social-strip">
+    <div class="container">
+        <h3>Stay Connected</h3>
+        <p>Follow us for availability updates, special offers, and a glimpse of life in Hamra</p>
+        <div class="social-links">
+            <a href="https://wa.me/96103755409" target="_blank" class="social-link sl-whatsapp">
+                💬 WhatsApp
+            </a>
+            <a href="https://www.instagram.com/weekend_furnished_apartments" target="_blank" class="social-link sl-instagram">
+                📸 Instagram
+            </a>
+            <a href="https://www.facebook.com/61581125482177/" target="_blank" class="social-link sl-facebook">
+                👥 Facebook
+            </a>
+            <a href="https://www.tiktok.com/@weekend.furnished" target="_blank" class="social-link sl-tiktok">
+                🎵 TikTok
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 <span>Weekend Furnished Apartments</span> — Hamra, Beirut, Lebanon. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
