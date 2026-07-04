@@ -872,6 +872,25 @@ footer span { color: var(--blue-light); }
 
 .footer-lang-link:hover { color: var(--blue-light); }
 
+.nav-lang-link {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.nav-lang-link:hover { color: var(--white); }
+nav.scrolled .nav-lang-link { color: var(--text-muted); }
+nav.scrolled .nav-lang-link:hover { color: var(--blue); }
+
+.nav-lang-link-mobile {
+    color: var(--white);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
 /* ── LANGUAGE POPUP ── */
 .lang-popup-overlay {
     display: none;

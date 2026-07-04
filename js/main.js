@@ -140,12 +140,9 @@ function applyTranslations() {
     document.documentElement.lang = currentLang;
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
 
-    document.querySelectorAll('#lang-toggle, #lang-toggle-mobile').forEach(btn => {
-        btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
+    document.querySelectorAll('#nav-lang-link, #nav-lang-link-mobile, #footer-lang-link').forEach(el => {
+        el.textContent = currentLang === 'ar' ? 'English' : 'العربية';
     });
-
-    const footerLink = document.getElementById('footer-lang-link');
-    if (footerLink) footerLink.textContent = currentLang === 'ar' ? 'English' : 'العربية';
 
     // Re-render dynamic content in the new language
     if (typeof renderUnits === 'function') renderUnits(units);
