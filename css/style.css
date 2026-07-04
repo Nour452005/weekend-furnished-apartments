@@ -27,6 +27,10 @@ html, body {
     overflow-wrap: break-word;
 }
 
+[dir="rtl"] body {
+    font-family: 'Segoe UI', Tahoma, Arial, system-ui, sans-serif;
+}
+
 body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     background: var(--white);
@@ -858,6 +862,57 @@ footer {
 }
 
 footer span { color: var(--blue-light); }
+
+.footer-lang-link {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-lang-link:hover { color: var(--blue-light); }
+
+/* ── LANGUAGE POPUP ── */
+.lang-popup-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 1200;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.lang-popup-overlay.open { display: flex; }
+
+.lang-popup-card {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 2rem;
+    max-width: 360px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.lang-popup-text {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+}
+
+.lang-popup-text:last-of-type { margin-bottom: 1.5rem; }
+
+.lang-popup-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+}
+
+.lang-popup-buttons .btn { flex: 1; justify-content: center; }
 
 /* ── MOBILE MENU ── */
 .mobile-menu {
