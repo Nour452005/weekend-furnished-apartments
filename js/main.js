@@ -1,7 +1,18 @@
 // ── NAVBAR SCROLL ──
+let navIsScrolled = false;
 window.addEventListener('scroll', () => {
     const nav = document.getElementById('navbar');
-    nav.classList.toggle('scrolled', window.scrollY > 50);
+    const y = window.scrollY;
+
+    // Hysteresis: different enter/exit thresholds prevent flicker
+    // when mobile momentum scrolling bounces right at the edge.
+    if (!navIsScrolled && y > 60) {
+        navIsScrolled = true;
+        nav.classList.add('scrolled');
+    } else if (navIsScrolled && y < 30) {
+        navIsScrolled = false;
+        nav.classList.remove('scrolled');
+    }
 });
 
 // ── MOBILE MENU ──
