@@ -24,6 +24,7 @@ html { scroll-behavior: smooth; overscroll-behavior-y: contain; }
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    overflow-wrap: break-word;
 }
 
 body {
@@ -788,6 +789,8 @@ nav.scrolled .nav-links a:hover { color: var(--blue); }
     color: var(--text);
     text-decoration: none;
     line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .contact-item a:hover { color: var(--blue); }
@@ -919,6 +922,7 @@ footer span { color: var(--blue-light); }
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-map { height: 240px; }
     .stats-row { grid-template-columns: repeat(2, 1fr); }
     .search-box { flex-direction: column; }
     .hero { min-height: auto; justify-content: flex-start; padding: 6.5rem 1.5rem 3rem; }
