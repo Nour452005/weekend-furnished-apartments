@@ -107,10 +107,13 @@ const units = [
 let currentType = '';
 let currentGuests = '';
 let currentMin = 50;
-let currentMax = 300;
+let currentMax = 100;
+
+const PRICE_MIN = 50;
+const PRICE_MAX = 100;
 
 // ── PRICE SLIDER ──
-function updatePriceSlider() {
+function updatePriceSlider(evt) {
     const minEl = document.getElementById('price-min');
     const maxEl = document.getElementById('price-max');
     const fill  = document.getElementById('price-range-fill');
@@ -119,8 +122,8 @@ function updatePriceSlider() {
     let max = parseInt(maxEl.value);
 
     if (min >= max) {
-        if (event.target === minEl) min = max - 10;
-        else max = min + 10;
+        if (evt && evt.target === minEl) min = max - 5;
+        else max = min + 5;
         minEl.value = min;
         maxEl.value = max;
     }
@@ -131,8 +134,9 @@ function updatePriceSlider() {
     document.getElementById('price-min-val').textContent = '$' + min;
     document.getElementById('price-max-val').textContent = '$' + max;
 
-    const pct1 = ((min - 50) / 250) * 100;
-    const pct2 = ((max - 50) / 250) * 100;
+    const span = PRICE_MAX - PRICE_MIN;
+    const pct1 = ((min - PRICE_MIN) / span) * 100;
+    const pct2 = ((max - PRICE_MIN) / span) * 100;
     fill.style.left  = pct1 + '%';
     fill.style.width = (pct2 - pct1) + '%';
 
@@ -153,8 +157,8 @@ window.addEventListener('load', () => {
     // Add CSS for thumb pointer-events
     const style = document.createElement('style');
     style.textContent = `
-        input[type="range"]::-webkit-slider-thumb { pointer-events: all; }
-        input[type="range"]::-moz-range-thumb { pointer-events: all; }
+        input[type="range"]::-webkit-slider-thumb { pointer-events: all; touch-action: none; }
+        input[type="range"]::-moz-range-thumb { pointer-events: all; touch-action: none; }
     `;
     document.head.appendChild(style);
 

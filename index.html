@@ -159,12 +159,12 @@
                     <div style="position:relative;flex:1;height:20px;display:flex;align-items:center">
                         <div style="position:absolute;width:100%;height:3px;background:var(--grey-mid);border-radius:2px"></div>
                         <div id="price-range-fill" style="position:absolute;height:3px;background:var(--blue);border-radius:2px;left:0%;width:100%"></div>
-                        <input type="range" id="price-min" min="50" max="300" value="50" step="10"
-                               oninput="updatePriceSlider()"
-                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none">
-                        <input type="range" id="price-max" min="50" max="300" value="300" step="10"
-                               oninput="updatePriceSlider()"
-                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none">
+                        <input type="range" id="price-min" min="50" max="100" value="50" step="5"
+                               oninput="updatePriceSlider(event)"
+                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none;touch-action:none">
+                        <input type="range" id="price-max" min="50" max="100" value="100" step="5"
+                               oninput="updatePriceSlider(event)"
+                               style="position:absolute;width:100%;appearance:none;-webkit-appearance:none;background:none;pointer-events:none;outline:none;touch-action:none">
                     </div>
                     <span id="price-max-val" style="font-size:0.85rem;color:var(--blue);font-weight:600;white-space:nowrap">$100</span>
                 </div>
@@ -320,9 +320,9 @@
                     <div class="contact-icon">📍</div>
                     <div>
                         <h4>Address</h4>
-                        <a href="https://www.google.com/maps/search/Weekend+Furnished+Apartments+Hamra+Beirut"
+                        <a href="https://www.google.com/maps/search/86+Cairo+Street,+Hamra,+Beirut,+Lebanon"
                            target="_blank">
-                            Hamra Street area<br>
+                            86 Cairo Street, Hamra<br>
                             Beirut, Lebanon<br>
                             <span style="color:var(--blue);font-size:0.85rem">↗ Open in Google Maps</span>
                         </a>
@@ -357,7 +357,7 @@
 
             <iframe
                 class="contact-map"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.5!2d35.4833!3d33.8938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f17215880a78f%3A0x729182bae99836b4!2sHamra%2C%20Beirut%2C%20Lebanon!5e0!3m2!1sen!2slb!4v1625000000000!5m2!1sen!2slb"
+                src="https://www.google.com/maps?q=86+Cairo+Street,+Hamra,+Beirut,+Lebanon&output=embed"
                 allowfullscreen=""
                 loading="lazy">
             </iframe>
