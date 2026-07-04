@@ -144,14 +144,21 @@ function applyTranslations() {
         btn.textContent = currentLang === 'ar' ? 'EN' : 'AR';
     });
 
+    const footerLink = document.getElementById('footer-lang-link');
+    if (footerLink) footerLink.textContent = currentLang === 'ar' ? 'English' : 'العربية';
+
     // Re-render dynamic content in the new language
     if (typeof renderUnits === 'function') renderUnits(units);
 }
 
-function toggleLanguage() {
-    currentLang = currentLang === 'en' ? 'ar' : 'en';
+function setLanguage(lang) {
+    currentLang = lang;
     localStorage.setItem('siteLang', currentLang);
     applyTranslations();
+}
+
+function toggleLanguage() {
+    setLanguage(currentLang === 'en' ? 'ar' : 'en');
 }
 
 function initLanguage() {
@@ -209,8 +216,8 @@ const units = [
     {
         id: 'deluxe-double-twin',
         type: 'DOUBLE',
-        name: 'Deluxe Room – Twin Beds',
-        name_ar: 'غرفة ديلوكس – سريرين منفصلين',
+        name: 'Deluxe Double Room – Twin Beds',
+        name_ar: 'غرفة ديلوكس مزدوجة – سريرين منفصلين',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'غرفة ديلوكس مفروشة بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
         price: 50,
@@ -536,7 +543,5 @@ function answerLangPopup(wantsArabic) {
     const popup = document.getElementById('lang-popup');
     if (popup) popup.classList.remove('open');
 
-    if (wantsArabic && currentLang !== 'ar') {
-        toggleLanguage();
-    }
+    setLanguage(wantsArabic ? 'ar' : 'en');
 }
