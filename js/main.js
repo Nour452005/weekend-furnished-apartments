@@ -65,7 +65,7 @@ const units = [
     {
         id: 'deluxe-double-king',
         type: 'DOUBLE',
-        name: 'Deluxe Double Room – Big Bed',
+        name: 'Deluxe Double Room – King Size Bed',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         price: 50,
         guests: 2,
