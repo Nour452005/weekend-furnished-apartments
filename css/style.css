@@ -915,6 +915,7 @@ footer span { color: var(--blue-light); }
 @media (max-width: 768px) {
     html { scroll-behavior: auto; }
     nav { padding: 0 1.25rem; }
+    .hamburger { margin-right: 0.5rem; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
     .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
