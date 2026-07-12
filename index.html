@@ -9,6 +9,14 @@
 </head>
 <body>
 
+<canvas id="seasonal-canvas"></canvas>
+
+<!-- ROOM DETAIL MODAL -->
+<div class="room-modal-overlay" id="room-modal">
+    <div class="room-modal-close" onclick="closeRoomModal()">&times;</div>
+    <div class="room-modal-content" id="room-modal-content"></div>
+</div>
+
 <!-- LANGUAGE POPUP -->
 <div class="lang-popup-overlay" id="lang-popup">
     <div class="lang-popup-card">
@@ -55,7 +63,7 @@
     <div class="hero-content">
         <span class="hero-eyebrow" data-i18n="hero.eyebrow">Hamra, Beirut · Fully Furnished</span>
         <h1 data-i18n="hero.title">Feel at Home<br>in the Heart of Beirut</h1>
-        <p data-i18n="hero.sub">48 fully furnished suites walking steps away from AUBMC, Hamra Street,<br>
+        <p data-i18n="hero.sub">40 fully furnished suites walking steps away from AUBMC, Hamra Street,<br>
            and the Mediterranean. Your home away from home.</p>
     </div>
 
@@ -277,6 +285,13 @@
                     <p data-i18n="amenities.aub.desc">Walking distance from major universities</p>
                 </div>
             </div>
+            <div class="amenity-card">
+                <div class="amenity-icon">🐾</div>
+                <div class="amenity-text">
+                    <h4 data-i18n="amenities.pets.title">Pet Friendly</h4>
+                    <p data-i18n="amenities.pets.desc">Dogs, cats, and birds are welcome</p>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -347,14 +362,14 @@
                     <div class="contact-icon">📞</div>
                     <div>
                         <h4 data-i18n="contact.whatsappPhone">WhatsApp & Phone</h4>
-                        <a href="https://wa.me/96103755409" target="_blank">+961 03755409</a>
+                        <a href="https://wa.me/96103755409" target="_blank" class="contact-link-blue">+961 03755409</a>
                     </div>
                 </div>
                 <div class="contact-item">
                     <div class="contact-icon">✉️</div>
                     <div>
                         <h4 data-i18n="contact.email">Email</h4>
-                        <a href="mailto:info@weekendfurnishedapartments.com">info@weekendfurnishedapartments.com</a>
+                        <a href="mailto:info@weekendfurnishedapartments.com" class="contact-link-blue">info@weekendfurnishedapartments.com</a>
                     </div>
                 </div>
                 <div class="contact-item">

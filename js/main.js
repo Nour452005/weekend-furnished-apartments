@@ -5,7 +5,7 @@ const translations = {
         hero: {
             eyebrow: 'Hamra, Beirut · Fully Furnished',
             title: 'Feel at Home<br>in the Heart of Beirut',
-            sub: '48 fully furnished suites walking steps away from AUBMC, Hamra Street,<br>and the Mediterranean. Your home away from home.',
+            sub: '40 fully furnished suites walking steps away from AUBMC, Hamra Street,<br>and the Mediterranean. Your home away from home.',
             renovated: {
                 title: 'Recently Renovated',
                 sub: 'Every unit refreshed with modern finishes — top to bottom.',
@@ -42,7 +42,8 @@ const translations = {
             security: { title: '24/7 Security', desc: 'Safe and secure building at all times' },
             housekeeping: { title: 'Housekeeping', desc: 'Regular cleaning and fresh linen' },
             sea: { title: 'Near the Sea', desc: '1.2 km from AUB Beach Resort' },
-            aub: { title: 'Near AUB & AUBMC', desc: 'Walking distance from major universities' }
+            aub: { title: 'Near AUB & AUBMC', desc: 'Walking distance from major universities' },
+            pets: { title: 'Pet Friendly', desc: 'Dogs, cats, and birds are welcome' }
         },
         services: {
             label: 'Optional Add-ons', title: 'Laundry & Ironing Services', sub: 'Available on request, priced per item.',
@@ -60,6 +61,7 @@ const translations = {
         unitTypeLabels: { DOUBLE: 'DOUBLE', TRIPLE: 'TRIPLE', FAMILY: 'FAMILY' },
         unitTags: { WiFi: 'WiFi', Kitchenette: 'Kitchenette', AC: 'AC', TV: 'TV' },
         unitCard: { night: '/ night', bookNow: 'Book Now' },
+        roomModal: { guests: 'Guests' },
         emptyState: 'No apartments match your filters.'
     },
     ar: {
@@ -67,7 +69,7 @@ const translations = {
         hero: {
             eyebrow: 'الحمرا، بيروت · مفروشة بالكامل',
             title: 'اشعر أنك في بيتك<br>في قلب بيروت',
-            sub: '48 جناحًا مفروشًا بالكامل على بعد خطوات من AUBMC وشارع الحمرا،<br>والبحر المتوسط. بيتك بعيدًا عن بيتك.',
+            sub: '40 جناحًا مفروشًا بالكامل على بعد خطوات من AUBMC وشارع الحمرا،<br>والبحر المتوسط. بيتك بعيدًا عن بيتك.',
             renovated: {
                 title: 'تم تجديدها مؤخرًا',
                 sub: 'كل وحدة تم تجديدها بلمسات عصرية — من الألف إلى الياء.',
@@ -104,7 +106,8 @@ const translations = {
             security: { title: 'أمن على مدار الساعة', desc: 'مبنى آمن ومحمي في جميع الأوقات' },
             housekeeping: { title: 'خدمة تنظيف الغرف', desc: 'تنظيف دوري وأغطية أسرّة نظيفة' },
             sea: { title: 'قريب من البحر', desc: '1.2 كم من منتجع AUB الشاطئي' },
-            aub: { title: 'قريب من AUB وAUBMC', desc: 'على مسافة قريبة من الجامعات الكبرى' }
+            aub: { title: 'قريب من AUB وAUBMC', desc: 'على مسافة قريبة من الجامعات الكبرى' },
+            pets: { title: 'مسموح بالحيوانات الأليفة', desc: 'الكلاب والقطط والطيور مرحب بها' }
         },
         services: {
             label: 'خدمات إضافية اختيارية', title: 'خدمات الغسيل والكوي', sub: 'متوفرة عند الطلب، بسعر لكل قطعة.',
@@ -122,6 +125,7 @@ const translations = {
         unitTypeLabels: { DOUBLE: 'مزدوجة', TRIPLE: 'ثلاثية', FAMILY: 'عائلية' },
         unitTags: { WiFi: 'واي فاي', Kitchenette: 'مطبخ صغير', AC: 'تكييف', TV: 'تلفزيون' },
         unitCard: { night: '/ الليلة', bookNow: 'احجز الآن' },
+        roomModal: { guests: 'الضيوف' },
         emptyState: 'لا توجد شقق مطابقة لبحثك.'
     }
 };
@@ -213,19 +217,21 @@ const units = [
     {
         id: 'deluxe-double-twin',
         type: 'DOUBLE',
-        name: 'Deluxe Room – Twin Beds',
-        name_ar: 'غرفة ديلوكس  – سريرين منفصلين',
+        name: 'Deluxe Double Room – Twin Beds',
+        name_ar: 'غرفة ديلوكس مزدوجة – سريرين منفصلين',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'غرفة ديلوكس مفروشة بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
+        longDesc: '',
+        longDesc_ar: '',
         price: 50,
         guests: 2,
         tags: ['WiFi', 'Kitchenette', 'AC', 'TV'],
         images: [
             'images/DeluxeDoubleRoom (3).jpeg',
-            'images/DeluxeDoubleRoom (1).jpeg',
+            'images/kitchen (2).jpeg',
             'images/DeluxeDoubleRoom (2).jpeg',
             'images/DeluxeDoubleRoom (5).jpeg',
-            'images/DeluxeDoubleRoom (6).jpeg'
+            'images/kitchen (3).jpeg'
         ]
     },
     {
@@ -235,15 +241,17 @@ const units = [
         name_ar: 'غرفة ديلوكس مزدوجة – سرير كينغ',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'غرفة ديلوكس مفروشة بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
+        longDesc: '',
+        longDesc_ar: '',
         price: 50,
         guests: 2,
         tags: ['WiFi', 'Kitchenette', 'AC', 'TV'],
         images: [
             'images/DeluxeDoubleRoom (4).jpeg',
-            'images/DeluxeDoubleRoom (1).jpeg',
+            'images/kitchen (1) king size.jpeg',
             'images/DeluxeDoubleRoom (2).jpeg',
             'images/DeluxeDoubleRoom (5).jpeg',
-            'images/DeluxeDoubleRoom (6).jpeg'
+            'images/kitchen (2).jpeg'
         ]
     },
     {
@@ -253,14 +261,17 @@ const units = [
         name_ar: 'غرفة ديلوكس ثلاثية',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'غرفة ديلوكس مفروشة بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
+        longDesc: '',
+        longDesc_ar: '',
         price: 65,
         guests: 3,
         tags: ['WiFi', 'Kitchenette', 'AC', 'TV'],
         images: [
             'images/DeluxeTripleRoom (1).jpeg',
-            'images/DeluxeTripleRoom (2).jpeg',
+            'images/kitchen (2).jpeg',
             'images/DeluxeTripleRoom (3).jpeg',
-            'images/DeluxeTripleRoom (4).jpeg'
+            'images/DeluxeTripleRoom (4).jpeg',
+            'images/kitchen (3).jpeg'
         ]
     },
     {
@@ -270,6 +281,8 @@ const units = [
         name_ar: 'جناح ديلوكس عائلي',
         desc: 'A deluxe fully furnished room featuring modern décor, a private bathroom, and all essential amenities for a comfortable stay in the heart of Hamra.',
         desc_ar: 'جناح ديلوكس مفروش بالكامل بتصميم عصري وحمام خاص وكل وسائل الراحة الأساسية لإقامة مريحة في قلب الحمرا.',
+        longDesc: '',
+        longDesc_ar: '',
         price: 85,
         guests: 4,
         tags: ['WiFi', 'Kitchenette', 'AC', 'TV'],
@@ -280,8 +293,9 @@ const units = [
             'images/DeluxeFamilySuite (4).jpeg',
             'images/DeluxeFamilySuite (5).jpeg',
             'images/DeluxeFamilySuite (6).jpeg',
-            'images/DeluxeFamilySuite (7).jpeg',
-            'images/DeluxeFamilySuite (8).jpeg'
+            'images/kitchen (1) king size.jpeg',
+            'images/DeluxeFamilySuite (8).jpeg',
+            'images/kitchen (3).jpeg'
         ],
         video: 'images/DeluxeFamilySuite.mp4'
     },
@@ -350,6 +364,7 @@ window.addEventListener('load', () => {
     initAudienceCarousel();
     initLanguage();
     initLangPopup();
+    startSeasonalEffect();
 });
 
 // ── FILTERS ──
@@ -463,7 +478,7 @@ function renderUnits(list) {
         const typeLabel = t.unitTypeLabels[u.type] || u.type;
 
         return `
-        <div class="unit-card">
+        <div class="unit-card" data-unit-id="${u.id}">
             ${mediaBlock}
             <div class="unit-body">
                 <div class="unit-type">${typeLabel}</div>
@@ -484,6 +499,97 @@ function renderUnits(list) {
         </div>
     `}).join('');
 }
+
+// ── ROOM DETAIL MODAL ──
+const modalImageIndex = {};
+
+function renderModalMediaTag(id, slide) {
+    return slide.type === 'video'
+        ? `<video id="modal-media-${id}" class="unit-img" src="${slide.src}" controls></video>`
+        : `<img id="modal-media-${id}" class="unit-img" src="${slide.src}" style="object-fit:cover">`;
+}
+
+function changeModalImage(id, dir) {
+    const unit = units.find(u => u.id === id);
+    if (!unit) return;
+    const media = getUnitMedia(unit);
+    if (media.length < 2) return;
+
+    const len = media.length;
+    let idx = modalImageIndex[id] || 0;
+    idx = (idx + dir + len) % len;
+    modalImageIndex[id] = idx;
+
+    const mediaEl = document.getElementById(`modal-media-${id}`);
+    if (mediaEl) mediaEl.outerHTML = renderModalMediaTag(id, media[idx]);
+
+    const dotsEl = document.getElementById(`modal-dots-${id}`);
+    if (dotsEl) {
+        [...dotsEl.children].forEach((d, i) => d.classList.toggle('active', i === idx));
+    }
+}
+
+function openRoomModal(id) {
+    const unit = units.find(u => u.id === id);
+    if (!unit) return;
+
+    const t = translations[currentLang];
+    const media = getUnitMedia(unit);
+    const idx = 0;
+    modalImageIndex[id] = 0;
+
+    let mediaBlock;
+    if (media.length > 0) {
+        const arrows = media.length > 1 ? `
+            <button class="img-arrow img-arrow-prev" onclick="changeModalImage('${id}', -1)" aria-label="Previous">&#10094;</button>
+            <button class="img-arrow img-arrow-next" onclick="changeModalImage('${id}', 1)" aria-label="Next">&#10095;</button>
+            <div class="img-dots" id="modal-dots-${id}">
+                ${media.map((m, i) => `<span class="img-dot ${i === idx ? 'active' : ''}"></span>`).join('')}
+            </div>` : '';
+        mediaBlock = `<div class="unit-img-wrapper">${renderModalMediaTag(id, media[idx])}${arrows}</div>`;
+    } else {
+        mediaBlock = `<div class="unit-img">🏠</div>`;
+    }
+
+    const displayName = currentLang === 'ar' && unit.name_ar ? unit.name_ar : unit.name;
+    const displayDesc = currentLang === 'ar' && unit.desc_ar ? unit.desc_ar : unit.desc;
+    const typeLabel = t.unitTypeLabels[unit.type] || unit.type;
+
+    document.getElementById('room-modal-content').innerHTML = `
+        ${mediaBlock}
+        <div class="room-modal-type">${typeLabel}</div>
+        <h2 class="room-modal-title">${displayName}</h2>
+        <div class="room-modal-price">$${unit.price} <span>${t.unitCard.night} · ${unit.guests} ${t.roomModal.guests}</span></div>
+        <div class="unit-tags">
+            ${unit.tags.map(tag => `<span class="unit-tag">${t.unitTags[tag] || tag}</span>`).join('')}
+        </div>
+        <p class="room-modal-desc">${displayDesc}</p>
+        <a href="https://wa.me/96103755409?text=Hello%2C%20I%20am%20interested%20in%20the%20${encodeURIComponent(unit.name)}."
+           class="btn btn-primary" target="_blank">
+            ${t.unitCard.bookNow}
+        </a>
+    `;
+
+    document.getElementById('room-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeRoomModal() {
+    document.getElementById('room-modal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+// Click delegation: opens the modal when a card is clicked, but ignores
+// clicks on the carousel arrows or the Book Now button inside the card.
+document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('units-grid');
+    if (!grid) return;
+    grid.addEventListener('click', e => {
+        if (e.target.closest('.img-arrow') || e.target.closest('.btn-primary')) return;
+        const card = e.target.closest('.unit-card');
+        if (card) openRoomModal(card.dataset.unitId);
+    });
+});
 
 // ── COUNTER ANIMATION ──
 function animateCounters() {
@@ -525,6 +631,220 @@ document.addEventListener('click', e => {
     // Close mobile menu if open
     document.getElementById('mobile-menu').classList.remove('open');
 });
+
+// ── SEASONAL EFFECTS ──
+// To add a new occasion: add a date range check + emoji(s) + type below.
+// month is 1-12. Ranges can span into the next month (e.g. Dec 20 - Jan 5).
+// emoji can be a single string or an array of strings for variety.
+// type: 'rain' = continuous gentle fall (e.g. snow, hearts). 'splash' = one-time burst from center.
+function getActiveSeason() {
+    const now = new Date();
+    const month = now.getMonth() + 1;
+    const day = now.getDate();
+
+    // Valentine's Day period
+    if (month === 2 && day >= 1 && day <= 14) {
+        return { emoji: '❤️', density: 'normal', type: 'rain' };
+    }
+
+    // Christmas week (Dec 20 - 26) - checked before the broader Winter range below
+    if (month === 12 && day >= 20 && day <= 26) {
+        return { emoji: ['❄️', '🎄'], density: 'light', type: 'rain' };
+    }
+
+    // New Year's Eve/Day confetti - checked before Winter, since Winter's Dec/Jan
+    // range would otherwise match these dates first and this would never run.
+    if ((month === 12 && day === 31) || (month === 1 && day === 1)) {
+        return { emoji: ['🎉', '🎊', '✨', '🎈'], density: 'normal', type: 'splash' };
+    }
+
+    // Summer (June 1 - Aug 31)
+    if (month >= 6 && month <= 8) {
+        return { emoji: ['🌊', '☀️'], density: 'light', type: 'splash' };
+    }
+
+    // Winter / holiday season fallback (remaining Dec 1-19, 27-31, Jan 2-5)
+    if (month === 12 || (month === 1 && day <= 5)) {
+        return { emoji: '❄️', density: 'light', type: 'rain' };
+    }
+
+    return null;
+}
+
+// Pre-render each emoji to an offscreen canvas once. Repeatedly calling
+// fillText() with color emoji every frame is expensive and causes a
+// dropped-frame "lag" feeling; drawImage() from a pre-rendered sprite is
+// far cheaper and keeps the animation smooth.
+function buildEmojiSprites(emojiList, spriteSize) {
+    const sprites = {};
+    emojiList.forEach(e => {
+        const c = document.createElement('canvas');
+        c.width = spriteSize;
+        c.height = spriteSize;
+        const sctx = c.getContext('2d');
+        sctx.font = `${spriteSize * 0.75}px serif`;
+        sctx.textAlign = 'center';
+        sctx.textBaseline = 'middle';
+        sctx.fillText(e, spriteSize / 2, spriteSize / 2);
+        sprites[e] = c;
+    });
+    return sprites;
+}
+
+function startSeasonalEffect() {
+    const season = getActiveSeason();
+    const canvas = document.getElementById('seasonal-canvas');
+    if (!season || !canvas) return;
+
+    const ctx = canvas.getContext('2d');
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    const emojiList = Array.isArray(season.emoji) ? season.emoji : [season.emoji];
+    const sprites = buildEmojiSprites(emojiList, 64);
+
+    if (season.type === 'rain') {
+        runRainEffect(season, canvas, ctx, emojiList, sprites, resize);
+    } else {
+        runSplashEffect(season, canvas, ctx, emojiList, sprites);
+    }
+}
+
+// Continuous gentle fall (snow, hearts) - loops for as long as the page is open.
+function runRainEffect(season, canvas, ctx, emojiList, sprites) {
+    const isMobile = window.innerWidth < 600;
+    const baseCount = season.density === 'light' ? 30 : 45;
+    const count = isMobile ? Math.round(baseCount * 0.6) : baseCount;
+
+    const particles = [];
+    for (let i = 0; i < count; i++) {
+        particles.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height - canvas.height,
+            speedY: 40 + Math.random() * 60,
+            speedX: (Math.random() - 0.5) * 30,
+            size: 16 + Math.random() * 16,
+            rotation: Math.random() * 360,
+            rotationSpeed: (Math.random() - 0.5) * 40,
+            emoji: emojiList[Math.floor(Math.random() * emojiList.length)]
+        });
+    }
+
+    let lastTime = null;
+
+    function draw(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const dt = Math.min((timestamp - lastTime) / 1000, 0.05);
+        lastTime = timestamp;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        particles.forEach(p => {
+            p.y += p.speedY * dt;
+            p.x += p.speedX * dt;
+            p.rotation += p.rotationSpeed * dt;
+
+            if (p.y > canvas.height + 30) {
+                p.y = -30;
+                p.x = Math.random() * canvas.width;
+            }
+
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.drawImage(sprites[p.emoji], -p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+        });
+
+        requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+}
+
+// One-time burst from the center that flies outward and disappears at the screen edges.
+function runSplashEffect(season, canvas, ctx, emojiList, sprites) {
+    const isMobile = window.innerWidth < 600;
+    const baseCount = season.density === 'light' ? 34 : 45;
+    const count = isMobile ? Math.round(baseCount * 0.6) : baseCount;
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+
+    // Horizontal and vertical reach are scaled independently to the screen's
+    // actual width/height, since a phone is much taller than it is wide - using
+    // a single diagonal-based speed meant particles aimed upward never got
+    // anywhere close to the top before gravity pulled them back down.
+    // travelTime is roughly how many seconds it should take to reach the edge.
+    const defaultTravelTime = isMobile ? 0.9 : 1.3;
+    const travelTime = season.travelTime !== undefined ? season.travelTime : defaultTravelTime;
+    const vxTarget = (canvas.width / 2) / travelTime;
+    const vyTarget = (canvas.height / 2) / travelTime;
+
+    const particles = [];
+    for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speedFactor = 0.95 + Math.random() * 0.35;
+        // Small random offset from dead-center so particles don't all launch
+        // from one exact overlapping point (which reads as clutter at the start).
+        const spawnOffset = Math.random() * 40;
+        particles.push({
+            x: centerX + Math.cos(angle) * spawnOffset,
+            y: centerY + Math.sin(angle) * spawnOffset,
+            vx: Math.cos(angle) * vxTarget * speedFactor,
+            vy: Math.sin(angle) * vyTarget * speedFactor,
+            size: 18 + Math.random() * 18,
+            rotation: Math.random() * 360,
+            rotationSpeed: (Math.random() - 0.5) * 300,
+            emoji: emojiList[Math.floor(Math.random() * emojiList.length)],
+            dead: false
+        });
+    }
+
+    const gravity = 45; // px/second^2, kept low so even the slowest upward particles still reach the top edge
+    const margin = 60; // travel a bit past the edge before vanishing, so it reads as "hitting" the edge
+    let lastTime = null;
+
+    function draw(timestamp) {
+        if (!lastTime) lastTime = timestamp;
+        const dt = Math.min((timestamp - lastTime) / 1000, 0.05);
+        lastTime = timestamp;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        let anyAlive = false;
+
+        particles.forEach(p => {
+            if (p.dead) return;
+
+            p.vy += gravity * dt;
+            p.x += p.vx * dt;
+            p.y += p.vy * dt;
+            p.rotation += p.rotationSpeed * dt;
+
+            if (p.x < -margin || p.x > canvas.width + margin || p.y < -margin || p.y > canvas.height + margin) {
+                p.dead = true;
+                return;
+            }
+
+            anyAlive = true;
+            ctx.save();
+            ctx.translate(p.x, p.y);
+            ctx.rotate((p.rotation * Math.PI) / 180);
+            ctx.drawImage(sprites[p.emoji], -p.size / 2, -p.size / 2, p.size, p.size);
+            ctx.restore();
+        });
+
+        if (anyAlive) {
+            requestAnimationFrame(draw);
+        } else {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+    requestAnimationFrame(draw);
+}
 
 // ── LANGUAGE POPUP ──
 // Shown once per browser session to every visitor (not based on browser language).
